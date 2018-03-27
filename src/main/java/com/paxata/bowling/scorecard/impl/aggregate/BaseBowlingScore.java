@@ -1,4 +1,4 @@
-package com.paxata.bowling.scorecard.impl;
+package com.paxata.bowling.scorecard.impl.aggregate;
 
 import com.paxata.bowling.model.Frame;
 import com.paxata.bowling.scorecard.BowlingScore;
@@ -6,8 +6,6 @@ import java.util.List;
 
 abstract class BaseBowlingScore
     implements BowlingScore {
-
-  static final int FINAL_FRAME_INDEX = 9;
 
   int calculateStrikeFramesScore(List<Frame> scores, int index) {
     int score = MAX_VALUE;

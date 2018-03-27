@@ -1,4 +1,4 @@
-package com.paxata.bowling.scorecard.impl;
+package com.paxata.bowling.scorecard.impl.aggregate;
 
 import static org.junit.Assert.assertEquals;
 
@@ -35,7 +35,7 @@ public class BowlingScoreImplTest {
   @Test
   public void testAllZeroes() {
     // set all scores to zero
-    for (int i=0; i<MAX; i++) {
+    for (int i = 0; i < MAX; i++) {
       Frame frame = new Frame(0, 0);
       scores.add(i, frame);
     }
@@ -45,7 +45,7 @@ public class BowlingScoreImplTest {
   @Test
   public void testAllStrike() {
     // set all scores to zero
-    for (int i=0; i<MAX; i++) {
+    for (int i = 0; i < MAX; i++) {
       Frame frame = new Frame(10, 0);
       scores.add(i, frame);
     }
@@ -56,7 +56,7 @@ public class BowlingScoreImplTest {
   @Test
   public void testAllSparesWithAllFivesAndBonusFive() {
     // set all scores to zero
-    for (int i=0; i<MAX; i++) {
+    for (int i = 0; i < MAX; i++) {
       Frame frame = new Frame(5, 5);
       scores.add(i, frame);
     }
@@ -67,18 +67,18 @@ public class BowlingScoreImplTest {
   @Test
   public void testAllSparesWithSevenAndThreeAndBonusSix() {
     // set all scores to zero
-    for (int i=0; i<MAX; i++) {
+    for (int i = 0; i < MAX; i++) {
       Frame frame = new Frame(7, 3);
       scores.add(i, frame);
     }
     scores.add(MAX, new Frame(6, 0));
-    assertEquals(17*9+(7+3+6), bowlingScore.calculate(scores));
+    assertEquals(17 * 9 + (7 + 3 + 6), bowlingScore.calculate(scores));
   }
 
   @Test
   public void testAllSparesWithZeroAndTenAndBonusZero() {
     // set all scores to zero
-    for (int i=0; i<MAX; i++) {
+    for (int i = 0; i < MAX; i++) {
       Frame frame = new Frame(0, 10);
       scores.add(i, frame);
     }
@@ -89,12 +89,12 @@ public class BowlingScoreImplTest {
   @Test
   public void testAllSparesWithZeroAndTenAndBonusTen() {
     // set all scores to zero
-    for (int i=0; i<MAX; i++) {
+    for (int i = 0; i < MAX; i++) {
       Frame frame = new Frame(0, 10);
       scores.add(i, frame);
     }
     scores.add(MAX, new Frame(10, 0));
-    assertEquals(100+10, bowlingScore.calculate(scores));
+    assertEquals(100 + 10, bowlingScore.calculate(scores));
   }
 
   @Test
@@ -114,7 +114,7 @@ public class BowlingScoreImplTest {
   }
 
   @Test
-  public void testRandomWithFinalFrameSpareBonus() {
+  public void testRandomWithFinalFrameSpareWithBonus() {
     scores.add(0, new Frame(1, 2));
     scores.add(1, new Frame(3, 4));
     scores.add(2, new Frame(5, 5));
@@ -131,7 +131,7 @@ public class BowlingScoreImplTest {
   }
 
   @Test
-  public void testRandomWithFinalFrameStrikeBonus() {
+  public void testRandomWithFinalFrameStrikeWithBonus() {
     scores.add(0, new Frame(1, 2));
     scores.add(1, new Frame(3, 4));
     scores.add(2, new Frame(5, 5));

@@ -1,4 +1,4 @@
-package com.paxata.bowling.scorecard.impl;
+package com.paxata.bowling.scorecard.impl.aggregate;
 
 import com.paxata.bowling.model.Frame;
 import java.util.List;

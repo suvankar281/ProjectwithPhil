@@ -8,6 +8,9 @@ public interface BowlingScore {
   int MIN_VALUE = 0;
   int MAX_VALUE = 10;
 
+  int FINAL_FRAME_INDEX = 9;
+  int BONUS_FRAME_INDEX = FINAL_FRAME_INDEX + 1;
+
   int calculate(List<Frame> scores);
 
   default boolean allZeroes(List<Frame> scores) {
